@@ -1,17 +1,21 @@
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        dict1 = {} 
 
+        #initialize dictionary using heights as keys
+        dict1 = {} 
         for i in range(len(heights)):
             dict1.update({heights[i]:names[i]})
-        
+
+        #Bubble sort heights list
         for j in range(len(heights)):
             for a in range(0, len(heights)-1):
                 if heights[a] < heights[a+1]:
                     heights[a], heights[a+1] = heights[a+1], heights[a] 
-
+    
+        #create list of values based on order of the keys
         rtnlist=[]
         for k in range(len(heights)):
             rtnlist.append(dict1[heights[k]])
-    
+
+        #return list of values
         return rtnlist
