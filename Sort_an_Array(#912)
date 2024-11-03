@@ -1,0 +1,23 @@
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+
+        nums_a = []
+        nums_b = []
+        final_list = []
+
+
+        for num in nums:
+            if num < 1000:
+                nums_a.append(num)
+            else:
+                nums_b.append(num)
+
+        nums_a.sort()
+        nums_b.sort()
+            
+            
+        final_list = nums_a + nums_b
+            
+        return(final_list)   
+
+        
